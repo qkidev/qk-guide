@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quark Guide</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="//cdn.bootcss.com/docsify/4.11.2/themes/vue.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">加载中</div>
+    <script>
+        window.$docsify = {
+            name: 'Quark Guide',
+            nameLink: '/',
+            // 完整配置参数
+            search: {
+                maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+                paths: 'auto', // or 'auto'
+                placeholder: '搜索',
+                noData: '找不到结果',
+                // 搜索标题的最大程级, 1 - 6
+                depth: 6
+            },
+
+            loadSidebar: true,
+            subMaxLevel: 2,
+            loadNavbar: true,
+            coverpage: true,
+            repo: ''
+        }
+    </script>
+    <script src="https://cdn.bootcss.com/docsify/4.11.2/docsify.min.js"></script>
+    <script src="https://cdn.bootcss.com/docsify/4.11.2/plugins/search.min.js"></script>
+    <script src="https://cdn.bootcss.com/prism/9000.0.1/components/prism-php.min.js"></script>
+    <script src="https://cdn.bootcss.com/prism/9000.0.1/components/prism-bash.min.js"></script>
+</body>
+
+</html>

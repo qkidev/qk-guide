@@ -30,6 +30,8 @@ docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:85
 `http://localhost:8545/` 就是本地节点rpc
 
 ### 其它说明
+* 强烈建议打开服务器30303端口(或者您的自定义端口)，更好的和其它节点交换数据，阿里云、aws等云服务器厂商需要设置安全组。
+
 * 如果服务器性能强 `--maxpeers` 参数可以增大
 
 * 如果遇到区块始终无法同步，请删除数据，重新同步

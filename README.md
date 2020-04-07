@@ -8,3 +8,4 @@
 * [节点搭建](/qk-node)
 * [https配置](/certbot-https)
 * [安全建议](/safety-advice)
+* [闪耀节点](/Shining-Block)

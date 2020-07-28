@@ -10,18 +10,21 @@
 ## Docker版
 ```bash
 # 1. 创建目录, 保存节点数据
-mkdir /data/qk_node
+mkdir -p /data/qk_node
 
-# 2. 
-wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json
+# 2. 切换到数据保存目录
+cd /data/qk_node
 
 # 3. 
-docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node init /root/qk_node/qk_poa.json --datadir /root/qk_node/qk_poa
+wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json
 
-# 4.
+# 4. 
+docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node init /root/qk_node/qk_poa.json --datadir /root/qk_node/qk_poa 
+
+# 5.
 wget https://static.quarkblockchain.cn/app/pc/static-nodes.json -O /data/qk_node/qk_poa/static-nodes.json
 
-# 5. 启动节点
+# 6. 启动节点
 docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode fast --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --nousb --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "qk_node" --allow-insecure-unlock  --http.api "net,web3,eth,personal,clique,txpool" --rpccorsdomain "*" console
 
 ```

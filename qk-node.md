@@ -22,7 +22,7 @@ docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node init /roo
 wget https://static.quarkblockchain.cn/app/pc/static-nodes.json -O /data/qk_node/qk_poa/static-nodes.json
 
 # 5. 启动节点
-docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode fast --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --nousb --maxpeers 2000 --rpc --rpcaddr 0.0.0.0 --rpcvhosts "qk_node" --allow-insecure-unlock  --rpcapi "net,web3,eth,personal,clique,txpool" --rpccorsdomain "*" console
+docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode fast --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --nousb --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "qk_node" --allow-insecure-unlock  --http.api "net,web3,eth,personal,clique,txpool" --rpccorsdomain "*" console
 
 ```
 

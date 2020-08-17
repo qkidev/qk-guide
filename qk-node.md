@@ -27,6 +27,9 @@ wget https://static.quarkblockchain.cn/app/pc/static-nodes.json -O /data/qk_node
 # 6. 启动节点
 docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode fast --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --light.serve 20 --light.maxpeers 200 --nousb --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "qk_node" --allow-insecure-unlock  --http.api "net,web3,eth,personal,clique,txpool" --http.corsdomain "*" console
 
+# 7. 自动更新镜像
+docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 3600  qk_poa_node
+
 ```
 
 ### 节点地址

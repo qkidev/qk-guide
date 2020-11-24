@@ -80,9 +80,11 @@ const abi = [ { "inputs": [ { "internalType": "uint256", "name": "initialSupply"
             ).then(function (data) {
 
                 var hash = data.hash;
-                console.log('提交成功，等待区块打包，自动执行智能合约');
                 customHttpProvider.waitForTransaction(hash).then((receipt) => {
-                    console.log("区块打包成功");
+                    if(receipt.status == 1)
+                        console.log("调用成功");
+                    else
+                        console.log("调用失败");
                 });
 
             }, function (data) {
@@ -97,29 +99,5 @@ const abi = [ { "inputs": [ { "internalType": "uint256", "name": "initialSupply"
                 }
             });
 
-
-    //调用合约的转账方法
-        contract.transfer("接收地址", "转账数量",
-                {
-                    gasLimit: 80000,
-                    gasPrice: ethers.utils.parseUnits("100", "gwei")
-                }
-            ).then(function (data) {
-
-                var hash = data.hash;
-                customHttpProvider.waitForTransaction(hash).then((receipt) => {
-                    console.log("区块打包成功");
-                });
-
-            }, function (data) {
-                if (data.code == "INSUFFICIENT_FUNDS") {
-                    console.log("矿工费不足");
-                } else if (data.code == 4001) {
-                    console.log("用户取消");
-                }
-                else {
-                    console.log("错误代码:" + data.code);
-                }
-            });
 
 ```

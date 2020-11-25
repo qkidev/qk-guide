@@ -90,7 +90,6 @@ const abi = [ { "inputs": [ { "internalType": "uint256", "name": "initialSupply"
             }, function (data) {
                 if (data.code == "INSUFFICIENT_FUNDS") {
                     console.log("矿工费不足");
-                }
                 } else if (data.code == 4001) {
                     console.log("用户取消");
                 }

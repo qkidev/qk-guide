@@ -5,6 +5,7 @@
 * [js开发样例](/js-sample)
 * [Token System Admin](/qk-token-system-admin)
 * [节点搭建](/qk-node)
+* [主网信息](/network)
 * [公共rpc](/public-rpc)
 * [https配置](/certbot-https)
 * [安全建议](/safety-advice)

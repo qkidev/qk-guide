@@ -8,6 +8,17 @@
 下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.203)
 
 ## Docker版
+
+执行前请确认您的 docker 版本安装正确，执行```docker version```,输出内容如下：
+```bash
+Client: Docker Engine - Community
+ Version:           20.10.12
+```
+
+注意是：Client: Docker Engine - Community
+
+如果不是，请卸载docker，使用```curl -fsSL https://get.docker.com | bash -s docker```重新安装。
+
 ```bash
 # 1. 创建目录, 保存节点数据
 mkdir -p /data/qk_node

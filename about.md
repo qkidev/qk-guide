@@ -15,10 +15,10 @@ https://qkiscan.io
 
 ## 公共rpc节点
 
-http://hz.node.quarkblockchain.cn:20189
+https://hz.node.quarkblockchain.cn
 
-http://sg.node.quarkblockchain.org
+https://sg.node.quarkblockchain.org
 
-http://jp.rpc.qkiscan.io:8545
+https://jp.rpc.qkiscan.io
 
 https://rpc.qkiview.com

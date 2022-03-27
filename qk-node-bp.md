@@ -5,7 +5,24 @@ bp节点搭建方法，你需要自行申请超级节点，并获得投票通过
 磁盘大于100gb以上，内存大于4gb以上，带宽大于2mb，如果是使用的类似阿里云、aws的服务器，建议打开30303端口。
 
 ## Windows
-下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.203)
+下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.239)
+
+安装后，打开客户端:
+
+1.在钱包里面创建一个钱包，记住密码。
+
+2.复制第一步创建的钱包，然后输入到矿工地址里面，输入密码，勾选打包区块。
+
+3.右下角点击 程序图标，退出，然后重新启动。
+
+如果区块高度和时间在走，说明在正在运行。
+
+如果不能运行，下载 [.net 4.8](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/thank-you/net48-web-installer)
+
+推荐配置：
+```
+4核cpu，4g内存，100GB SSD磁盘，带宽大于5MB
+```
 
 ## Docker版
 
@@ -24,6 +41,11 @@ Client: Docker Engine - Community
 yum -y install ntp
 systemctl enable ntpd
 systemctl start ntpd
+```
+
+推荐配置：
+```
+4核cpu，4g内存，100GB SSD磁盘，带宽大于5MB
 ```
 
 ```bash

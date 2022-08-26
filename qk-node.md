@@ -62,7 +62,7 @@ docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/doc
 
 * 如果服务器性能强 `--maxpeers` 参数可以增大
 
-* 如果遇到区块始终无法同步，请删除数据，重新同步
+* 如果遇到区块始终无法同步，可以重置区块，命令行可以执行```debug.setHead("0x")```，window版本```文件->重新同步区块链数据```
 
 * 可以使用screen运行到后台。
 

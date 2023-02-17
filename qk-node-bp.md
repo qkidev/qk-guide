@@ -55,7 +55,7 @@ exit
 echo "123456" > /root/qk_node/password ##把密码写入文件
 
 # 8.启动打包
-docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console
+docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44"  --miner.etherbase "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console
 
 ## 注意，这里的地址清替换为你在第6步创建的地址
 

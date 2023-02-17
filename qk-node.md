@@ -5,7 +5,7 @@
 磁盘大于100gb以上，内存大于4gb以上，带宽大于2mb，如果是使用的类似阿里云、aws的服务器，建议打开30303端口。
 
 ## Windows
-下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.203)
+下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.239)
 
 ## Docker版
 
@@ -62,7 +62,7 @@ docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/doc
 
 * 如果服务器性能强 `--maxpeers` 参数可以增大
 
-* 如果遇到区块始终无法同步，请删除数据，重新同步
+* 如果遇到区块始终无法同步，可以重置区块，命令行可以执行```debug.setHead("0x")```，window版本```文件->重新同步区块链数据```
 
 * 可以使用screen运行到后台。
 

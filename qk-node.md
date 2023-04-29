@@ -48,7 +48,7 @@ docker run -it --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p
 #运行公共rpc节点，需要配置 http.vhosts ，里面配置你的域名，如果有多个域名，使用英文逗号(,)分割，也可以使用 *，另外不需要--allow-insecure-unlock 参数，http.api里面不需要personal。
 
 # 7. 自动更新镜像
-docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 3600  qk_poa_node
+docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 36000
 
 ```
 

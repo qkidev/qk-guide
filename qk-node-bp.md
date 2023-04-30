@@ -43,47 +43,60 @@ systemctl enable ntpd
 systemctl start ntpd
 ```
 
+然后在更新系统
+```bash
+yum -y update
+```
+
 推荐配置：
 ```
 4核cpu，4g内存，100GB SSD磁盘，带宽大于5MB
 ```
 
-```bash
-# 1. 创建目录, 保存节点数据，这个目录可以根据自己的情况修改
-mkdir -p /data/qk_node
 
-# 2. 切换到数据保存目录
-cd /data/qk_node
+1. 创建目录, 保存节点数据，这个目录可以根据自己的情况修改
 
-# 3. 
-wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json
+`mkdir -p /data/qk_node`
 
-# 4. 初始化区块
-docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node:server init --datadir /root/qk_node/qk_poa /root/qk_node/qk_poa.json 
+2. 切换到数据保存目录
 
-# 5. 同步数据
-docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --light.serve 20 --light.maxpeers 200 --maxpeers 2000  console
+`cd /data/qk_node`
 
-## 这个时候会打开一个命令行，现在开始创建bp钱包
-personal.newAccount("123456")  #这里会返回一个钱包地址，就是你的bp节点钱包地址
+3. 
 
-## 然后输入退出命令
-exit
+`wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json`
 
-# 6.自动解锁钱包
-echo "123456" > /root/qk_node/password ##把密码写入文件
+4. 初始化区块
+
+`docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node:server init --datadir /root/qk_node/qk_poa /root/qk_node/qk_poa.json `
+
+5. 同步数据
+
+`docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --light.serve 20 --light.maxpeers 200 --maxpeers 2000  console`
+
+这个时候会打开一个命令行，现在开始创建bp钱包
+
+`personal.newAccount("123456")`  #这里会返回一个钱包地址，就是你的bp节点钱包地址
+
+然后输入退出命令
+
+`exit`
+
+6.自动解锁钱包
+
+`echo "123456" > /root/qk_node/password`  把密码写入文件
 
 
-# 7. 自动更新镜像
-docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 36000
+7. 自动更新镜像
 
-# 8.启动打包
-docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44"  --miner.etherbase "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console
+`docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 36000`
+
+8.启动打包
+
+`docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44"  --miner.etherbase "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console`
 
 ## 注意，这里的地址清替换为你在第6步创建的地址
 
-
-```
 
 
 ### 其它说明
@@ -91,7 +104,7 @@ docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/roo
 
 * 如果服务器性能强 `--maxpeers` 参数可以增大
 
-* 如果遇到区块始终无法同步，可以重置区块，命令行可以执行```debug.setHead("0x")```，window版本```文件->重新同步区块链数据```
+* 如果遇到区块始终无法同步，可以重置区块，命令行可以执行`debug.setHead("0x")`，window版本`文件->重新同步区块链数据`
 
 * 可以使用screen运行到后台。
 

@@ -5,7 +5,12 @@
 磁盘大于100gb以上，内存大于4gb以上，带宽大于2mb，如果是使用的类似阿里云、aws的服务器，建议打开30303端口。
 
 ## Windows
-下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.239)
+下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.287)
+
+## 安卓
+
+下载安卓[qkiNode1.1.2.apk](https://cdn.ipfsscan.io/ipfs/QmapKk5cmb3NKy4ZUKKQB1zcVYVPDs1ENKjjHp6p8XvjWa?filename=qkiNode1.1.2-release-2022-12-29-17-51.apk)
+
 
 ## Docker版
 
@@ -43,7 +48,7 @@ docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node init /roo
 wget https://static.quarkblockchain.cn/app/pc/static-nodes.json -O /data/qk_node/qk_poa/static-nodes.json
 
 # 6. 启动节点
-docker run -it --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --light.serve 20 --light.maxpeers 200 --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "net,web3,eth,personal,clique,txpool" --txlookuplimit=0 --http.corsdomain "*" --allow-insecure-unlock console
+docker run -it --name qk_poa_node --restart unless-stopped -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --light.serve 20 --light.maxpeers 200 --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "net,web3,eth,personal,clique,txpool" --txlookuplimit=0 --http.corsdomain "*" --allow-insecure-unlock console
 
 #运行公共rpc节点，需要配置 http.vhosts ，里面配置你的域名，如果有多个域名，使用英文逗号(,)分割，也可以使用 *，另外不需要--allow-insecure-unlock 参数，http.api里面不需要personal。
 

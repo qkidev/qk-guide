@@ -15,7 +15,17 @@ https://hz.rpc.qkiscan.cn
 日本东京：
 ```
 https://jp.rpc.qkiscan.io
+
 ```
+
+
+https://sg.node.quarkblockchain.org
+
+https://jp.rpc.qkiscan.io
+
+https://rpc.qkiview.com
+
+https://rpc1.qkiscan.io
 
 
 ## 浏览器

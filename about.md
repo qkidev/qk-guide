@@ -22,3 +22,5 @@ https://sg.node.quarkblockchain.org
 https://jp.rpc.qkiscan.io
 
 https://rpc.qkiview.com
+
+https://rpc1.qkiscan.io

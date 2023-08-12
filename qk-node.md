@@ -54,7 +54,7 @@ yum -y update
 
  海外服务器可以使用 wget  https://ipfs.io/ipfs/Qmes1C76AcXVeTd4TXaCMFz9JGh3HAXaU5vJdd17zFBKqw?filename=qk_poa.json  -O qk_poa.json
 
-` docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node init /root/qk_node/qk_poa.json --datadir /root/qk_node/qk_poa`
+` docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node --datadir /root/qk_node/qk_poa init /root/qk_node/qk_poa.json`
 
 4. 自动更新镜像
 

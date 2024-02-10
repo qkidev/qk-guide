@@ -5,7 +5,7 @@ bp节点搭建方法，你需要自行申请超级节点，并获得投票通过
 磁盘大于100gb以上，内存大于4gb以上，带宽大于2mb，如果是使用的类似阿里云、aws的服务器，建议打开30303端口。
 
 ## Windows
-下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.239)
+下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.290)
 
 安装后，打开客户端:
 
@@ -68,11 +68,11 @@ yum -y update
 
 4. 初始化区块
 
-`docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node:server init --datadir /root/qk_node/qk_poa /root/qk_node/qk_poa.json `
+`docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node:server --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json `
 
 5. 同步数据
 
-`docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --light.serve 20 --light.maxpeers 200 --maxpeers 2000  console`
+`docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa  --state.scheme=path  --networkid 20181205 --v5disc --maxpeers 2000  console`
 
 这个时候会打开一个命令行，现在开始创建bp钱包
 

@@ -7,4 +7,6 @@
 
 https://hz.node.quarkblockchain.cn  中国杭州
 
-https://jp.rpc.qkiscan.io/  日本东京
+https://rpc1.qkiscan.io
+
+https://rpc2.qkiscan.io

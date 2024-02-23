@@ -5,8 +5,16 @@
 
 ## 地址
 
-https://hz.node.quarkblockchain.cn  中国杭州
+https://hz.rpc.qkiscan.cn
+
+https://rpc1.qkiscan.cn
+
+https://rpc2.qkiscan.cn
+
+https://rpc3.qkiscan.cn
 
 https://rpc1.qkiscan.io
 
 https://rpc2.qkiscan.io
+
+https://rpc3.qkiscan.io

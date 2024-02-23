@@ -89,7 +89,7 @@ yum -y update
 
 7. 自动更新镜像
 
-`docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 36000`
+`docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 86400`
 
 8.启动打包
 

@@ -58,7 +58,7 @@ yum -y update
 
 4. 自动更新镜像
 
-`docker run -d --name watchtower-qk-node --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 36000`
+`docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 86400`
 
 5. 启动节点
 

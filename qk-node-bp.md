@@ -56,23 +56,23 @@ yum -y update
 
 1. 创建目录, 保存节点数据，这个目录可以根据自己的情况修改
 
-`mkdir -p /data/qk_node`
+`mkdir -p /root/qk_node`
 
 2. 切换到数据保存目录
 
-`cd /data/qk_node`
+`cd /root/qk_node`
 
 3. 
 
 `wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json`
 
-4. 初始化区块
+4. 初始化区块(如果使用快照同步，就不需要了)
 
-`docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node:server --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json `
+`docker run -it --rm -v /root/qk_node:/root/qk_node  chenjia404/qk_node:server --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json `
 
-5. 同步数据
+5. 同步数据(如果使用快照同步，就不需要了)
 
-`docker run -it --rm --name qk_poa_node -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa  --state.scheme=path  --networkid 20181205 --v5disc --maxpeers 2000  console`
+`docker run -it --rm --name qk_poa_node -v /root/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node:server --syncmode snap --snapshot --datadir /root/qk_node/qk_poa  --state.scheme=path  --networkid 20181205 --v5disc --maxpeers 2000  console`
 
 这个时候会打开一个命令行，现在开始创建bp钱包
 
@@ -93,7 +93,7 @@ yum -y update
 
 8.启动打包
 
-`docker run -it --restart unless-stopped --name qk_poa_node -v /data/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44"  --miner.etherbase "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console`
+`docker run -it --restart unless-stopped --name qk_poa_node -v /root/qk_node:/root/qk_node  -p 30303:30303 -p 30303:30303/udp chenjia404/qk_node --syncmode snap --datadir /root/qk_node/qk_poa --networkid 20181205 --v5disc --unlock "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44"  --miner.etherbase "0x9edc3d7a718ae1aa938aa94386210a066cbd7a44" --password /root/qk_node/password  --mine  --maxpeers 100  --cache 3072  console`
 
 ## 注意，这里的地址清替换为你在第6步创建的地址
 

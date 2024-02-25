@@ -42,11 +42,11 @@ yum -y update
 
 1. 创建目录, 保存节点数据
 
-`mkdir -p /data/qk_node`
+`mkdir -p /root/qk_node`
 
 2. 切换到数据保存目录
 
-`cd /data/qk_node`
+`cd /root/qk_node`
 
 3. 初始化区块(如果使用快照同步，就不需要了)
 
@@ -54,7 +54,7 @@ yum -y update
 
  海外服务器可以使用 wget  https://ipfs.io/ipfs/Qmes1C76AcXVeTd4TXaCMFz9JGh3HAXaU5vJdd17zFBKqw?filename=qk_poa.json  -O qk_poa.json
 
-` docker run -it --rm -v /data/qk_node:/root/qk_node  chenjia404/qk_node --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json`
+` docker run -it --rm -v /root/qk_node:/root/qk_node  chenjia404/qk_node --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json`
 
 4. 自动更新镜像
 
@@ -71,7 +71,7 @@ mv qk_poa/geth/chaindata20240222 qk_poa/geth/chaindata
 
 6. 启动节点
 
-`docker run -it --name qk_poa_node --restart unless-stopped -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --state.scheme=path --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "net,web3,eth,clique,txpool" --history.transactions=0 --http.corsdomain "*" console`
+`docker run -it --name qk_poa_node --restart unless-stopped -v /root/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --state.scheme=path --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "net,web3,eth,clique,txpool" --history.transactions=0 --http.corsdomain "*" console`
 
 运行公共rpc节点，需要配置 http.vhosts ，里面配置你的域名，如果有多个域名，使用英文逗号(,)分割，也可以使用 *
 

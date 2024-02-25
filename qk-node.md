@@ -60,7 +60,15 @@ yum -y update
 
 `docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 86400`
 
-5. 启动节点
+5. 下载快照
+```shell
+wget https://files.qkiscan.io/chaindata20240222.zip
+unzip chaindata20240222.zip -d qk_poa/geth
+mv qk_poa/geth/chaindata20240222 qk_poa/geth/chaindata
+```
+如果提示没有zip，使用 yun install unzip -y
+
+6. 启动节点
 
 `docker run -it --name qk_poa_node --restart unless-stopped -v /data/qk_node:/root/qk_node -p 8545:8545 -p 30303:30303 -p 30303:30303/udp -d chenjia404/qk_node --syncmode snap --snapshot --datadir /root/qk_node/qk_poa --state.scheme=path --networkid 20181205 --v5disc --txpool.pricelimit 1000000000 --maxpeers 2000 --http --http.addr 0.0.0.0 --http.vhosts "*" --http.api "net,web3,eth,clique,txpool" --history.transactions=0 --http.corsdomain "*" console`
 

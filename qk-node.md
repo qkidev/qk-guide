@@ -48,7 +48,7 @@ yum -y update
 
 `cd /data/qk_node`
 
-3. 初始化区块
+3. 初始化区块(如果使用快照同步，就不需要了)
 
 `wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json`
 
@@ -60,8 +60,9 @@ yum -y update
 
 `docker run -d --name watchtower --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 86400`
 
-5. 下载快照
+5. 下载快照(可选，加快同步速度)
 ```shell
+rm qk_poa/geth/chaindata -rf
 wget https://files.qkiscan.io/chaindata20240222.zip
 unzip chaindata20240222.zip -d qk_poa/geth
 mv qk_poa/geth/chaindata20240222 qk_poa/geth/chaindata

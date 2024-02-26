@@ -11,7 +11,7 @@
 
 ## 安卓
 
-下载安卓[qkiNode1.1.6.apk](https://cdn.ipfsscan.io/ipfs/QmbQNWNYaBcJQciSVJ2q5GvF1pQbN1gvuZ4MSB2rPtqp9g?filename=qkiNode1.1.6-release-2024-02-11-02-23.apk)，然后运行打开即可。
+下载安卓[qkiNode1.1.7.apk](https://cdn.ipfsscan.io/ipfs/QmQkp1HGcMUZPAvJacYtr3coWf9AL1wPpS2yFWfXQihdLM?filename=qkiNode1.1.7-release-2024-02-27-02-18.apk)，然后运行打开即可。
 
 
 ## Docker版

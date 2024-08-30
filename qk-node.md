@@ -6,7 +6,7 @@
 
 ## Windows
 
-下载Windows[客户端](https://static.quarkblockchain.cn/app/pc/quarkblockchain-install.exe?v=1.0.1.290)，然后运行打开即可。
+下载Windows[客户端](https://cdn.ipfsscan.io/ipfs/QmQq9rLnmRxoLApgtnzsiYMpAGYKwR8DxefSuvN3DfzxEz?filename=quarkblockchain-install1.0.1.335.exe)，然后运行打开即可。
 
 
 ## 安卓

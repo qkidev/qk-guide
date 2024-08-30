@@ -5,7 +5,7 @@ bp节点搭建方法，你需要自行申请超级节点，并获得投票通过
 磁盘大于100gb以上，内存大于4gb以上，带宽大于2mb，如果是使用的类似阿里云、aws的服务器，建议打开30303端口。
 
 ## Windows
-下载Windows[客户端](https://cdn.ipfsscan.io/ipfs/QmWFB5GAqGaX7gpn9gmDU3mckCnbLpZWzsXXatLtijYPdi?filename=quarkblockchain-install.exe&v=1.0.1.318)
+下载Windows[客户端](https://cdn.ipfsscan.io/ipfs/QmQq9rLnmRxoLApgtnzsiYMpAGYKwR8DxefSuvN3DfzxEz?filename=quarkblockchain-install1.0.1.335.exe)
 
 安装后，打开客户端:
 

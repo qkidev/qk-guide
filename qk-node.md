@@ -65,7 +65,6 @@ yum -y update
 rm qk_poa/geth/chaindata -rf
 wget https://files.qkiscan.io/chaindata20241006.zip
 unzip chaindata20241006.zip -d qk_poa/geth
-mv qk_poa/geth/chaindata20241006 qk_poa/geth/chaindata
 ```
 如果提示没有zip，使用 yun install unzip -y
 

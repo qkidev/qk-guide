@@ -6,7 +6,7 @@
 
 ## Windows
 
-下载Windows[客户端](https://cdn.ipfsscan.io/ipfs/QmWG8E9viiGQKBBCLMjE8ezFepNQrs4rvrKZywazvH2YyM?filename=quarkblockchain-install1.0.1.349.exe)，然后运行打开即可。
+下载Windows[客户端](https://cdn.ipfsscan.io/ipfs/QmVSJ49VvQZcbHRbJNHaYxjGgbqBJzC1kAMhYgyL9p9xt4?filename=quarkblockchain-install1.0.1.357.exe)，然后运行打开即可。
 
 
 ## 安卓

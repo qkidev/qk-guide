@@ -50,9 +50,8 @@ yum -y update
 
 3. 初始化区块(如果使用快照同步，就不需要了)
 
-`wget https://static.quarkblockchain.cn/app/pc/qk_poa.json -O qk_poa.json`
+`wget https://cdn.img2ipfs.com/ipfs/Qmes1C76AcXVeTd4TXaCMFz9JGh3HAXaU5vJdd17zFBKqw?filename=qk_poa.json -O qk_poa.json`
 
- 海外服务器可以使用 wget  https://ipfs.io/ipfs/Qmes1C76AcXVeTd4TXaCMFz9JGh3HAXaU5vJdd17zFBKqw?filename=qk_poa.json  -O qk_poa.json
 
 ` docker run -it --rm -v /root/qk_node:/root/qk_node  chenjia404/qk_node --datadir /root/qk_node/qk_poa --state.scheme=path init /root/qk_node/qk_poa.json`
 

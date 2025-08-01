@@ -26,12 +26,6 @@ Client: Docker Engine - Community
 
 如果不是，请卸载docker，使用```curl -fsSL https://get.docker.com | bash -s docker```重新安装。
 
-为了更好的运行节点，需要安装ntp同步时间
-```bash
-yum -y install ntp
-systemctl enable ntpd
-systemctl start ntpd
-```
 
 然后在更新系统
 ```bash

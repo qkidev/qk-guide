@@ -19,7 +19,9 @@
 执行前请确认您的 docker 版本安装正确，执行```docker version```,输出内容如下：
 ```bash
 Client: Docker Engine - Community
- Version:           20.10.12
+ Version:           28.2.2
+ API version:       1.50
+ Go version:        go1.24.3
 ```
 
 注意是：Client: Docker Engine - Community

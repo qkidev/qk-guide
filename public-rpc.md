@@ -4,14 +4,13 @@
 如果有大量数据读取需求，请自建节点，避免因为公共节点的负载能力不足影响您的业务。
 
 ## 地址
+=
 
-https://hz.rpc.qkiscan.cn
+https://rpc1.qkirpc.org
 
-https://rpc1.qkiscan.cn
+https://rpc2.qkirpc.org
 
-https://rpc2.qkiscan.cn
-
-https://rpc3.qkiscan.cn
+https://rpc3.qkirpc.org
 
 https://rpc1.qkiscan.io
 

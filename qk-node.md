@@ -58,8 +58,8 @@ yum -y update
 5. 下载快照(可选，加快同步速度)
 ```shell
 rm qk_poa/geth/chaindata -rf
-wget https://files.qkiscan.io/chaindata20250703.zip
-unzip chaindata20250703.zip -d qk_poa/geth
+wget https://files.qkiscan.io/chaindata20260104.zip
+unzip chaindata20260104.zip -d qk_poa/geth
 ```
 如果提示没有zip，使用 yun install unzip -y
 

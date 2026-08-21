@@ -11,7 +11,7 @@
 
 ## 安卓
 
-下载安卓[qkiNode2.8.3.apk](https://220250729.xyz/app/dev.qki.node/qkiNode2.8.3-release-2026-07-09-17-12.apk)，然后运行打开即可。
+下载[安卓节点](https://node.qki.dev/)，然后运行打开即可。
 
 
 ## Docker版
